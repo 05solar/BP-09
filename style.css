@@ -12,8 +12,8 @@ body {
 .card {
   width: min(100%, 440px);
   padding: 36px;
-  border-radius: 28px;
-  background: #f0f4ff;
+  border-radius: 99px; /* 변경: 20px -> 99px, 카드 모서리를 둥글게 변경 */
+  background: #FFC857; /* 변경: white -> #FFC857, 카드 배경을 주황색으로 변경 */
   text-align: center;
   box-shadow: 0 12px 40px #24364b12;
 }
