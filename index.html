@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>9주차 React 카운터 실습</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="assets/react.js"></script>
+  <script src="assets/react-dom.js"></script>
+  <script src="assets/babel.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- JSX를 이 파일 안에 두어 HTML을 더블클릭해도 실행되도록 구성했습니다. -->
+  <script type="text/babel" data-presets="react">
+    const { useState } = React;
+
+    function App() {
+      const [count, setCount] = useState(10);
+
+      function increase() {
+        setCount(c => c + 2);
+      }
+
+      function reset() {
+        setCount(10);
+      }
+
+      return (
+        <main className="card">
+          <p className="subtitle">초급프로젝트 · 일반 분반 · 9주차</p>
+          <h1>React 카운터</h1>
+          <output aria-live="polite">{count}</output>
+          <div className="buttons">
+            {/* TODO 4: 증가 버튼 문구를 실제 동작에 맞게 수정한다. */}
+            <button onClick={increase}>+1</button>
+            {/* TODO 5: onClick={reset}이 연결된 초기화 버튼을 여기에 추가한다. */}
+          </div>
+        </main>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
